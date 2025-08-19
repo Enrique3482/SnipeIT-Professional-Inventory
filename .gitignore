@@ -1,0 +1,49 @@
+# PowerShell logs
+*.log
+*.tmp
+
+# Configuration files with sensitive data
+SnipeConfig.json.local
+*-local.json
+
+# Backup directories
+Backups/
+backups/
+
+# Windows specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Log directories
+Logs/
+ErrorLogs/
+
+# Screenshots and photos
+Screenshots/
+Photos/
+*.png
+*.jpg
+*.jpeg
+
+# PowerShell transcript files
+PowerShell_transcript.*
+
+# VS Code settings
+.vscode/
+
+# Test outputs
+test-output/
+TestResults/
+
+# Temporary files
+*~
+*.swp
+*.swo
+
+# Windows shortcuts
+*.lnk
+
+# Local environment files
+.env
+.env.local
