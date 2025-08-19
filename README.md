@@ -8,6 +8,8 @@
 
 Professional-grade PowerShell inventory system for **SnipeIT** asset management with comprehensive hardware detection, intelligent status management, and automated maintenance tracking.
 
+> **🚀 Quick Start**: [English Guide](QUICKSTART.md) | [Deutsche Anleitung](SCHNELLSTART.md)
+
 ### ✨ Key Features
 
 - 🔍 **Automatic Hardware Detection** - Complete system inventory with detailed component recognition
@@ -29,7 +31,7 @@ Professional-grade PowerShell inventory system for **SnipeIT** asset management 
 - **SnipeIT** instance with API access
 - **Administrator privileges** for complete hardware detection
 
-### Installation
+### 5-Minute Installation
 
 1. **Download the script:**
    ```powershell
@@ -38,13 +40,13 @@ Professional-grade PowerShell inventory system for **SnipeIT** asset management 
    cd SnipeIT-Professional-Inventory
    ```
 
-2. **Configure SnipeIT connection:**
+2. **Get your SnipeIT API token and configure:**
    ```powershell
    # Edit the configuration file
    notepad SnipeConfig.json
    ```
 
-3. **Update the following settings:**
+3. **Update these settings:**
    ```json
    {
      "Snipe": {
@@ -55,14 +57,16 @@ Professional-grade PowerShell inventory system for **SnipeIT** asset management 
    }
    ```
 
-4. **Run the inventory:**
+4. **Test first, then run:**
    ```powershell
-   # Production run
-   .\SnipeIT-Professional-Inventory.ps1
-
    # Test mode (recommended first run)
    .\SnipeIT-Professional-Inventory.ps1 -TestMode -VerboseLogging
+   
+   # Production run
+   .\SnipeIT-Professional-Inventory.ps1 -CustomerName "Your Company"
    ```
+
+**📖 Need detailed instructions?** See [QUICKSTART.md](QUICKSTART.md) or [SCHNELLSTART.md](SCHNELLSTART.md)
 
 ## 📖 Usage Examples
 
@@ -166,6 +170,14 @@ The system automatically maps hardware data to SnipeIT custom fields:
 - **Error Log**: `C:\ProgramData\SnipeIT\Errorlog\SnipeIT-Errors.log`
 - **Backup Directory**: `C:\ProgramData\SnipeIT\Backups\`
 
+## 📚 Documentation
+
+- 📖 **Installation Guide**: [INSTALLATION.md](INSTALLATION.md)
+- 🚀 **Quick Start (English)**: [QUICKSTART.md](QUICKSTART.md)
+- 🚀 **Schnellstart (Deutsch)**: [SCHNELLSTART.md](SCHNELLSTART.md)
+- 🚢 **Deployment Guide**: [DEPLOYMENT.md](DEPLOYMENT.md)
+- 📝 **Changelog**: [CHANGELOG.md](CHANGELOG.md)
+
 ## 🔄 Version History
 
 ### v2.0.0 (Latest)
@@ -198,7 +210,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🆘 Support
 
-- **Documentation**: [Wiki](../../wiki)
+- **Quick Start**: [QUICKSTART.md](QUICKSTART.md) | [SCHNELLSTART.md](SCHNELLSTART.md)
+- **Documentation**: [Installation Guide](INSTALLATION.md) | [Deployment Guide](DEPLOYMENT.md)
 - **Issues**: [GitHub Issues](../../issues)
 - **Discussions**: [GitHub Discussions](../../discussions)
 
