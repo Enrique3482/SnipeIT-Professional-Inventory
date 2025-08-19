@@ -59,7 +59,7 @@ Write-Host "✓ Custom field management with collision detection" -ForegroundCol
 Write-Host "✓ Maintenance tracking and scheduling" -ForegroundColor White
 Write-Host ""
 Write-Host "For the complete implementation, please contact:" -ForegroundColor Cyan
-Write-Host "Email: henrique.sebastiao@example.com" -ForegroundColor White
+Write-Host "Email: henrique.sebastiao@me.com" -ForegroundColor White
 Write-Host "GitHub: @Enrique3482" -ForegroundColor White
 Write-Host ""
 Write-Host "Professional Support Available for Enterprise Deployments" -ForegroundColor Green
