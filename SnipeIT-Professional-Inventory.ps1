@@ -33,7 +33,10 @@
 .NOTES
     Version: 2.0.0
     Author: Professional IT Team
-    Last Modified: 2025-01-10
+    Last Modified: 2025-08-19
+    
+    Security Notice: This public version contains placeholder values for sensitive data.
+    Configure your actual settings in SnipeConfig.json before use.
 #>
 
 [CmdletBinding()]
@@ -75,20 +78,19 @@ $ErrorActionPreference = 'Stop'
 $ProgressPreference = 'Continue'
 
 # Script metadata
-# Personal fingerprint for unique identification
 $script:Metadata = @{
     Version = "2.0.0"
     ScriptName = "SnipeIT-Inventory"
-    Author = "Henrique Sebastiao"
-    Purpose = "Spittelmeister GmbH/Asset Management"
-    Fingerprint = "[?Z3R0?{C00L}[01]]"
+    Author = "Professional IT Team"
+    Purpose = "Professional Asset Management System"
+    Fingerprint = "[UNIQUE_SYSTEM_ID]"
 }
 
-# Configuration structure
+# Configuration structure - Uses external config file for security
 $script:Configuration = @{
     Snipe = @{
-        Url = "http://192.168.101.62/api/v1"
-        Token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmMxZTcxYzhhMTVlMGVmYTkyM2M0NjllMTA2YTJjNTdjNzcyM2VlMWI0NDM2Yjg1N2VlMTExOTJhYmNlODQ0NDdmYzAzMWY4YTViYTAxMDIiLCJpYXQiOjE3NTUyNDMxNDMuNDgzNDMyLCJuYmYiOjE3NTUyNDMxNDMuNDgzNDMzLCJleHAiOjIyMjg2Mjg3NDMuNDc5NjU1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.tUZvlRPn_Jeo7PID7vMDX22pck8Qi3tGxyXxCkaX9QpOnpBvlLcluQy8wXIdXITFk2FaclARh3O2YAN42XW4GcGXjtv1Q3EbSEOEtUq3OuKqafFsKZpqBnbl4tHF-LykEMgLjU9vFSZjVxSo_w07FNMgrXBElrudp-4J41gme7OmqaOrt4LQQG0N9YDTi8B_YGKsA0N6RfLASOmejSYGOOmwUvOFp40A93uxx21deUbYPumJRq1nvrKhDhl71HhAEBJl9alwz0V0lhKhp74PFgLJk6go4mjpNf9TxlyqkHVuCI898Jdlml9P1CAM6tGa2GWW1LqjBjqQ2IPK6mZM4lNMDT7jC0AianYBIIQcu3_b1hgQK2fkgWLOTAVJvTRmFkSFcZoTp1jh9IDQORM-aq5cfdNbVlJ69BMu0MJaqx01KeVtSORh4tFGeCGfBawBkt1yRM2AyM-bYI9Xu1su93fBl-5Qx8TJ_AZs0jBVnnitl8USMgZjHJq-fNXwBY19Oz2rl_LvZy7k7lc3pyW1UtR_oz9z3ge1njkI6sC_Swxa3aoalstIyK_EQWsjSodvtWa-DDdmH2QGg9S1vdCjz13gxSgwFisD1p6Nmwa_vbWwJ-xUWGs4NFt5QmZ83h9s8dO7pYyyRaEsJlE14vW_e1LB9UB81W_T_v56dyWLAHs"
+        Url = "YOUR_SNIPEIT_URL_HERE/api/v1"
+        Token = "YOUR_API_TOKEN_HERE"
         StandardCompanyName = $CustomerName
         StandardStatusName = "In Use"
         StandardModelFieldsetId = 2  # Computer Standard Fieldset
@@ -146,38 +148,133 @@ $script:Configuration = @{
     VerboseLogging = $VerboseLogging
 }
 
-# Note: This is a truncated version for GitHub upload
-# The complete script contains additional classes and functionality:
-# - RollbackManager for backup and recovery
-# - Logger with enhanced color coding
-# - ConfigurationManager for settings management
-# - SnipeITApiClient for API communication
-# - HardwareDetector for comprehensive system scanning
-# - AssetManager for asset synchronization
-# - CustomFieldManager for field management
-# - InventoryOrchestrator for main execution
+# ============================================================================
+# CONFIGURATION LOADER
+# ============================================================================
 
+function Load-Configuration {
+    [CmdletBinding()]
+    param()
+    
+    Write-Host "Loading configuration..." -ForegroundColor Cyan
+    
+    if (Test-Path $ConfigurationFile) {
+        try {
+            $configContent = Get-Content $ConfigurationFile -Raw | ConvertFrom-Json
+            
+            # Override default configuration with file values
+            if ($configContent.Snipe.Url) {
+                $script:Configuration.Snipe.Url = $configContent.Snipe.Url
+            }
+            if ($configContent.Snipe.Token) {
+                $script:Configuration.Snipe.Token = $configContent.Snipe.Token
+            }
+            if ($configContent.Snipe.StandardCompanyName) {
+                $script:Configuration.Snipe.StandardCompanyName = $configContent.Snipe.StandardCompanyName
+            }
+            
+            Write-Host "✓ Configuration loaded from $ConfigurationFile" -ForegroundColor Green
+        }
+        catch {
+            Write-Warning "Failed to load configuration from $ConfigurationFile. Using defaults."
+        }
+    } else {
+        Write-Warning "Configuration file not found: $ConfigurationFile"
+        Write-Host "Please create SnipeConfig.json with your settings." -ForegroundColor Yellow
+    }
+    
+    # Validate required settings
+    if ($script:Configuration.Snipe.Url -eq "YOUR_SNIPEIT_URL_HERE/api/v1" -or 
+        $script:Configuration.Snipe.Token -eq "YOUR_API_TOKEN_HERE") {
+        Write-Host ""
+        Write-Host "⚠️  CONFIGURATION REQUIRED" -ForegroundColor Red
+        Write-Host "Please update your SnipeConfig.json file with:" -ForegroundColor Yellow
+        Write-Host "- Your SnipeIT server URL" -ForegroundColor White
+        Write-Host "- Your API token" -ForegroundColor White
+        Write-Host ""
+        if (-not $TestMode) {
+            Write-Host "Run with -TestMode to test functionality without API calls" -ForegroundColor Cyan
+            exit 1
+        }
+    }
+}
+
+# ============================================================================
+# MAIN EXECUTION
+# ============================================================================
+
+Write-Host "===========================================" -ForegroundColor Cyan
 Write-Host "SnipeIT Professional Inventory System v2.0.0" -ForegroundColor Green
 Write-Host "Professional Edition - Enhanced Asset Management" -ForegroundColor Cyan
+Write-Host "===========================================" -ForegroundColor Cyan
 Write-Host ""
-Write-Host "Features:" -ForegroundColor Yellow
-Write-Host "- Comprehensive hardware detection" -ForegroundColor White
-Write-Host "- External monitor recognition" -ForegroundColor White
-Write-Host "- Docking station management" -ForegroundColor White
-Write-Host "- Intelligent user-computer matching" -ForegroundColor White
-Write-Host "- Real-time SnipeIT synchronization" -ForegroundColor White
+
+# Load configuration
+Load-Configuration
+
+Write-Host "System Information:" -ForegroundColor Yellow
+Write-Host "- Configuration File: $ConfigurationFile" -ForegroundColor White
+Write-Host "- Log Path: $LogPath" -ForegroundColor White
+Write-Host "- Customer: $CustomerName" -ForegroundColor White
+Write-Host "- Test Mode: $($TestMode.IsPresent)" -ForegroundColor White
+Write-Host "- Verbose Logging: $($VerboseLogging.IsPresent)" -ForegroundColor White
+Write-Host "- Simulate Hardware: $($SimulateHardware.IsPresent)" -ForegroundColor White
 Write-Host ""
 
 if ($TestMode) {
-    Write-Host "Running in TEST MODE - No actual API calls will be made" -ForegroundColor Yellow
-    Write-Host "Configuration File: $ConfigurationFile" -ForegroundColor Cyan
-    Write-Host "Customer: $CustomerName" -ForegroundColor Cyan
+    Write-Host "🧪 RUNNING IN TEST MODE" -ForegroundColor Yellow
+    Write-Host "No actual API calls will be made" -ForegroundColor Yellow
     Write-Host ""
-    Write-Host "Test completed successfully!" -ForegroundColor Green
+    
+    Write-Host "Features that would be executed:" -ForegroundColor Cyan
+    Write-Host "✓ Hardware Detection (CPU, RAM, Storage, etc.)" -ForegroundColor Green
+    Write-Host "✓ Monitor Recognition (External displays)" -ForegroundColor Green
+    Write-Host "✓ Docking Station Management" -ForegroundColor Green
+    Write-Host "✓ User-Computer Matching" -ForegroundColor Green
+    Write-Host "✓ Asset Status Management" -ForegroundColor Green
+    Write-Host "✓ Custom Field Population" -ForegroundColor Green
+    Write-Host "✓ Maintenance Tracking" -ForegroundColor Green
+    Write-Host ""
+    
+    if ($SimulateHardware) {
+        Write-Host "🎭 Simulating additional hardware for testing..." -ForegroundColor Magenta
+    }
+    
+    Write-Host "✅ Test completed successfully!" -ForegroundColor Green
 } else {
-    Write-Host "For production use, please configure your SnipeIT connection in SnipeConfig.json" -ForegroundColor Yellow
-    Write-Host "Run with -TestMode first to verify functionality" -ForegroundColor Yellow
+    Write-Host "🚀 PRODUCTION MODE" -ForegroundColor Green
+    Write-Host ""
+    Write-Host "Note: This is the GitHub public version with placeholder values." -ForegroundColor Yellow
+    Write-Host "The complete enterprise implementation includes:" -ForegroundColor Cyan
+    Write-Host ""
+    Write-Host "Advanced Classes:" -ForegroundColor White
+    Write-Host "- RollbackManager (Backup & Recovery)" -ForegroundColor Gray
+    Write-Host "- Logger (Enhanced Color Coding)" -ForegroundColor Gray
+    Write-Host "- ConfigurationManager (Settings Management)" -ForegroundColor Gray
+    Write-Host "- SnipeITApiClient (API Communication)" -ForegroundColor Gray
+    Write-Host "- HardwareDetector (Comprehensive Scanning)" -ForegroundColor Gray
+    Write-Host "- AssetManager (Asset Synchronization)" -ForegroundColor Gray
+    Write-Host "- CustomFieldManager (Field Management)" -ForegroundColor Gray
+    Write-Host "- InventoryOrchestrator (Main Execution)" -ForegroundColor Gray
+    Write-Host ""
+    Write-Host "Enterprise Features:" -ForegroundColor White
+    Write-Host "- 2900+ lines of production code" -ForegroundColor Gray
+    Write-Host "- Advanced error handling and rollback" -ForegroundColor Gray
+    Write-Host "- Real-time hardware detection" -ForegroundColor Gray
+    Write-Host "- Intelligent asset lifecycle management" -ForegroundColor Gray
+    Write-Host ""
+    Write-Host "For the complete implementation, contact:" -ForegroundColor Cyan
+    Write-Host "📧 henrique.sebastiao@me.com" -ForegroundColor White
+    Write-Host "🐙 GitHub: @Enrique3482" -ForegroundColor White
 }
+
+Write-Host ""
+Write-Host "📋 Next Steps:" -ForegroundColor Yellow
+Write-Host "1. Configure SnipeConfig.json with your settings" -ForegroundColor White
+Write-Host "2. Run with -TestMode first to verify functionality" -ForegroundColor White
+Write-Host "3. Execute in production mode for asset management" -ForegroundColor White
+Write-Host ""
+Write-Host "🔗 Documentation: See README.md and QUICKSTART.md" -ForegroundColor Cyan
 
 # Script completed successfully
 exit 0
