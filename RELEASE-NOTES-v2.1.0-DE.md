@@ -1,7 +1,7 @@
 # 🛡️ Release Notes v2.1.0 - Circuit Breaker & Stabilitäts-Edition
 
 **SnipeIT Professional Inventory System v2.1.0**  
-**Veröffentlichungsdatum**: Januar 2025  
+**Veröffentlichungsdatum**: August 2025  
 **Build**: Stability & Circuit Breaker Edition
 
 ---
