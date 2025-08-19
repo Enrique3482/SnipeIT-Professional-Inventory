@@ -13,6 +13,57 @@
 
 ![SnipeIT Professional Demo](screenshots/Screenshot%202025-08-19%20102718.png)
 
+## 🖥️ Platform Compatibility
+
+### ✅ Supported Platforms
+
+| Platform | Status | PowerShell | Hardware Detection | Notes |
+|----------|--------|------------|-------------------|--------|
+| **Windows 10/11** | ✅ **Fully Supported** | Windows PowerShell 5.1+ | ✅ Complete | **Recommended Platform** |
+| **Windows Server** | ✅ **Fully Supported** | Windows PowerShell 5.1+ | ✅ Complete | Production Ready |
+| **Linux (Ubuntu/Debian)** | ⚠️ **Experimental** | PowerShell Core 7+ | ❌ **Windows Commands Required** | See Linux Setup |
+| **macOS** | ⚠️ **Experimental** | PowerShell Core 7+ | ❌ **Windows Commands Required** | Limited Support |
+
+### 🐧 Linux Support (Experimental)
+
+**PowerShell Core 7+ Required** - The script can run on Linux with PowerShell Core, but **Windows-specific commands are still required**:
+
+#### Linux Installation (Ubuntu/Debian):
+```bash
+# Install PowerShell Core 7
+wget -q https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb
+sudo dpkg -i packages-microsoft-prod.deb
+sudo apt-get update
+sudo apt-get install -y powershell
+
+# Verify installation
+pwsh --version
+```
+
+#### ⚠️ **Critical Linux Limitations:**
+```powershell
+# These Windows commands will FAIL on Linux:
+Get-CimInstance Win32_ComputerSystem     # ❌ Windows WMI only
+Get-CimInstance Win32_BIOS               # ❌ Windows WMI only  
+Get-NetAdapter                           # ❌ Windows networking
+$env:COMPUTERNAME                        # ❌ Windows environment
+HKLM:\SOFTWARE\Microsoft                 # ❌ Windows Registry
+```
+
+#### 🔧 **Linux Alternative Commands Needed:**
+```bash
+# Hardware detection alternatives for Linux:
+lshw -short                  # Hardware listing
+dmidecode -s system-serial   # Serial number
+lscpu                        # CPU information
+free -h                      # Memory information
+lsblk                        # Storage devices
+ip addr show                 # Network interfaces
+hostnamectl                  # System information
+```
+
+> **🚨 Important**: The current script is designed for Windows environments. Linux support would require a complete rewrite using Linux-compatible commands.
+
 ### ✨ Enterprise Features v2.0.0
 
 - 🏗️ **8 Enterprise Classes** - Modular architecture with RollbackManager, Logger, ConfigurationManager, SnipeITApiClient, HardwareDetector, AssetManager, CustomFieldManager, and InventoryOrchestrator
@@ -38,7 +89,7 @@
 
 ### Prerequisites
 - **PowerShell 5.1+** (Windows PowerShell or PowerShell Core)
-- **Windows 10/11** or **Windows Server 2016+**
+- **Windows 10/11** or **Windows Server 2016+** *(Recommended)*
 - **SnipeIT** instance with API access
 - **Administrator privileges** for complete hardware detection
 
@@ -95,6 +146,16 @@
 .\SnipeIT-Professional-Inventory.ps1 -ConfigurationFile "C:\Config\Production.json" -LogPath "C:\Logs\inventory.log"
 ```
 
+### Cross-Platform Deployment (Experimental)
+```bash
+# Linux with PowerShell Core (Limited functionality)
+pwsh -File SnipeIT-Professional-Inventory.ps1 -TestMode
+
+# Note: Hardware detection will fail due to Windows-specific commands
+# Use -SimulateHardware for testing on non-Windows platforms
+pwsh -File SnipeIT-Professional-Inventory.ps1 -TestMode -SimulateHardware
+```
+
 ### Automated Deployment Options
 ```powershell
 # Group Policy deployment
@@ -126,13 +187,13 @@ schtasks /create /tn "SnipeIT Inventory" /tr "powershell.exe -File 'C:\Scripts\S
 
 ```powershell
 # Automatic detection includes:
-✅ Computer specifications (CPU, RAM, Storage)
-✅ External monitors with technical details
-✅ Docking stations and peripherals
-✅ Network configuration (IP, MAC, Domain)
-✅ Operating system and installation date
-✅ User information and checkout status
-✅ Maintenance scheduling and tracking
+✅ Computer specifications (CPU, RAM, Storage)      # Windows Only
+✅ External monitors with technical details         # Windows WMI Required
+✅ Docking stations and peripherals                 # Windows PnP Required
+✅ Network configuration (IP, MAC, Domain)          # Windows NetAdapter Required
+✅ Operating system and installation date           # Windows Registry Required
+✅ User information and checkout status             # Windows Environment Required
+✅ Maintenance scheduling and tracking              # Windows CIM Required
 ```
 
 ## 📊 Custom Fields Integration
@@ -170,12 +231,19 @@ The system automatically configures 13 professional custom fields:
 
 ## 🛠️ System Requirements
 
-### Minimum Requirements
+### Minimum Requirements (Windows)
 - **OS**: Windows 10 (Build 1809+) or Windows Server 2016+
 - **PowerShell**: Version 5.1 or later
 - **Memory**: 2GB RAM
 - **Storage**: 100MB disk space
 - **Network**: Connectivity to SnipeIT instance
+
+### Experimental Requirements (Linux/macOS)
+- **PowerShell Core**: Version 7.0 or later
+- **OS**: Ubuntu 20.04+, Debian 11+, macOS 10.15+
+- **Memory**: 4GB RAM
+- **Limitations**: ⚠️ **Hardware detection requires Windows commands**
+- **Alternative**: Use `-SimulateHardware` parameter for testing
 
 ### Recommended Specifications
 - **OS**: Windows 11 or Windows Server 2022
@@ -210,6 +278,7 @@ The system automatically configures 13 professional custom fields:
 - ✅ **Rollback System** - Safe operations with automatic backups
 - ✅ **Enhanced Logging** - Color-coded output with detailed monitoring
 - ✅ **Security Improvements** - Secure configuration and data sanitization
+- ✅ **Cross-Platform Awareness** - PowerShell Core compatibility notes
 
 ### v1.x (Legacy)
 - Basic hardware detection
