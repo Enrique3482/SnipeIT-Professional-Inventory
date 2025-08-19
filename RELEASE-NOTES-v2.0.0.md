@@ -6,7 +6,7 @@
 ## 📸 Screenshot-Galerie mit Feature-Demonstration
 
 ### 🖥️ Screenshot 1: Intelligente Monitor-Erkennung
-![Monitor Detection Detail](screenshots/monitor-detection-detail.png)
+![Monitor Detection Detail](screenshots/Screenshot%202025-08-19%20102718.png)
 **Was zeigt das Bild:**
 - ✅ **Dell P3424WE Monitor** automatisch in SnipeIT inventarisiert
 - ✅ **Vollständige technische Spezifikationen** erfasst: 34" Display, digitale Verbindung, LCD-Typ
@@ -16,7 +16,7 @@
 - ✅ **Detaillierte Notizen** mit Device Name, Manufacturer, Model, Size, Resolution
 
 ### 📋 Screenshot 2: Umfassender Hardware-Report
-![Hardware Summary Report](screenshots/hardware-summary-report.png)
+![Hardware Summary Report](screenshots/Screenshot%202025-08-19%20085148.png)
 **Was zeigt das Bild:**
 - ✅ **Kompletter Asset-Report** für PC282 (Dell Precision 3560)
 - ✅ **Hardware-Zusammenfassung**: Manufacturer, Model, Type, Serial, UUID
@@ -27,7 +27,7 @@
 - ✅ **Peripherie-Erkennung**: Docking Stations: 0, External Monitors: 1
 
 ### 🎯 Screenshot 3: Asset-Übersicht Dashboard
-![Asset Overview Dashboard](screenshots/asset-overview-dashboard.png)
+![Asset Overview Dashboard](screenshots/Screenshot%202025-08-19%20085252.png)
 **Was zeigt das Bild:**
 - ✅ **Zubehör-Übersicht** mit automatisch erkannten Assets
 - ✅ **Dell P3424WE Monitor** korrekt als "Monitore" kategorisiert
@@ -36,7 +36,7 @@
 - ✅ **Professionelle Darstellung** in SnipeIT Interface
 
 ### 📊 Screenshot 4: Kategorie-Management
-![Category Management](screenshots/category-management.png)
+![Category Management](screenshots/Screenshot%202025-08-19%20085420.png)
 **Was zeigt das Bild:**
 - ✅ **Automatische Kategorie-Erstellung**: "Laptop" und "Monitore" 
 - ✅ **Asset-Typ Zuordnung**: Laptop als "Asset", Monitore als "Zubehör"
@@ -44,7 +44,7 @@
 - ✅ **Intelligente Klassifizierung** durch das Inventory-System
 
 ### ⚙️ Screenshot 5: Custom Fields Management
-![Custom Fields Configuration](screenshots/custom-fields-configuration.png)
+![Custom Fields Configuration](screenshots/Screenshot%202025-08-19%20085503.png)
 **Was zeigt das Bild:**
 - ✅ **13 professionelle Custom Fields** automatisch konfiguriert
 - ✅ **Strukturierte Datenfelder**: MAC Address, RAM (GB), CPU, UUID, IP Address
@@ -54,7 +54,7 @@
 - ✅ **Format-Validierung** für verschiedene Datentypen (MAC, IP, ANY)
 
 ### 💻 Screenshot 6: Asset-Detail-Ansicht
-![Asset Detail View](screenshots/asset-detail-view.png)
+![Asset Detail View](screenshots/Screenshot%202025-08-19%20102551.png)
 **Was zeigt das Bild:**
 - ✅ **Vollständiger Asset-Datensatz** für Dell Precision 3560 Laptop
 - ✅ **Asset-Tag**: PC282 mit Seriennummer 00001
