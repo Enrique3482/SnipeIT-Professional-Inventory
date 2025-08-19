@@ -100,7 +100,7 @@ Register-ScheduledTask -TaskName "SnipeIT Inventory" -Action $action -Trigger $t
 - 📖 **Full Documentation**: [README.md](README.md)
 - 🐛 **Report Bugs**: [GitHub Issues](../../issues)
 - 💬 **Ask Questions**: [GitHub Discussions](../../discussions)
-- 📧 **Email Support**: henrique.sebastiao@example.com
+- 📧 **Email Support**: henrique.sebastiao@me.com
 
 ---
 
