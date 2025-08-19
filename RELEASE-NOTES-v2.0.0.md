@@ -5,17 +5,27 @@
 
 ## 📸 Screenshot-Galerie mit Feature-Demonstration
 
-### 🖥️ Screenshot 1: Intelligente Monitor-Erkennung
-![Monitor Detection Detail](screenshots/Screenshot%202025-08-19%20102718.png)
+### ⚙️ Screenshot 1: Custom Fields Management
+![Custom Fields Configuration](screenshots/Screenshot%202025-08-19%20085503.png)
 **Was zeigt das Bild:**
-- ✅ **Dell P3424WE Monitor** automatisch in SnipeIT inventarisiert
-- ✅ **Vollständige technische Spezifikationen** erfasst: 34" Display, digitale Verbindung, LCD-Typ
-- ✅ **PnP Device ID** für eindeutige Hardware-Identifikation
-- ✅ **Automatische Kategorisierung** als "Monitore" mit korrektem Hersteller
-- ✅ **Zeitstempel-Tracking** für Erstellung und letzte Aktualisierung
-- ✅ **Detaillierte Notizen** mit Device Name, Manufacturer, Model, Size, Resolution
+- ✅ **13 professionelle Custom Fields** automatisch konfiguriert
+- ✅ **Strukturierte Datenfelder**: MAC Address, RAM (GB), CPU, UUID, IP Address
+- ✅ **Erweiterte Felder**: Last User, OS Version, Windows Product Key, System Age
+- ✅ **Spezielle Felder**: Storage Summary, Hardware Hash, Inventory Version
+- ✅ **Eindeutige Datenbankfeld-Namen** (_snipeit_mac_address_1, etc.)
+- ✅ **Format-Validierung** für verschiedene Datentypen (MAC, IP, ANY)
 
-### 📋 Screenshot 2: Umfassender Hardware-Report
+### 💻 Screenshot 2: Asset-Detail-Ansicht
+![Asset Detail View](screenshots/Screenshot%202025-08-19%20102551.png)
+**Was zeigt das Bild:**
+- ✅ **Vollständiger Asset-Datensatz** für Dell Precision 3560 Laptop
+- ✅ **Asset-Tag**: PC282 mit Seriennummer 00001
+- ✅ **Status-Management**: "In Verwendung" mit Checkout-Funktionalität
+- ✅ **Zeitstempel**: Erstellung 2025-08-18 12:28 PM, Aktualisierung 04:29 PM
+- ✅ **Hersteller-Integration**: Dell als Hersteller korrekt zugeordnet
+- ✅ **Kategorisierung**: Als "Laptop" klassifiziert
+
+### 📋 Screenshot 3: Umfassender Hardware-Report
 ![Hardware Summary Report](screenshots/Screenshot%202025-08-19%20085148.png)
 **Was zeigt das Bild:**
 - ✅ **Kompletter Asset-Report** für PC282 (Dell Precision 3560)
@@ -26,7 +36,7 @@
 - ✅ **Wartungsstatus**: System Age 36 Tage, Next Maintenance geplant
 - ✅ **Peripherie-Erkennung**: Docking Stations: 0, External Monitors: 1
 
-### 🎯 Screenshot 3: Asset-Übersicht Dashboard
+### 🎯 Screenshot 4: Asset-Übersicht Dashboard
 ![Asset Overview Dashboard](screenshots/Screenshot%202025-08-19%20085252.png)
 **Was zeigt das Bild:**
 - ✅ **Zubehör-Übersicht** mit automatisch erkannten Assets
@@ -35,7 +45,7 @@
 - ✅ **Warnung-Symbol** für Wartung oder Status-Updates
 - ✅ **Professionelle Darstellung** in SnipeIT Interface
 
-### 📊 Screenshot 4: Kategorie-Management
+### 📊 Screenshot 5: Kategorie-Management
 ![Category Management](screenshots/Screenshot%202025-08-19%20085420.png)
 **Was zeigt das Bild:**
 - ✅ **Automatische Kategorie-Erstellung**: "Laptop" und "Monitore" 
@@ -43,25 +53,15 @@
 - ✅ **Mengen-Tracking**: Jeweils 1 Asset pro Kategorie erfasst
 - ✅ **Intelligente Klassifizierung** durch das Inventory-System
 
-### ⚙️ Screenshot 5: Custom Fields Management
-![Custom Fields Configuration](screenshots/Screenshot%202025-08-19%20085503.png)
+### 🖥️ Screenshot 6: Intelligente Monitor-Erkennung
+![Monitor Detection Detail](screenshots/Screenshot%202025-08-19%20102718.png)
 **Was zeigt das Bild:**
-- ✅ **13 professionelle Custom Fields** automatisch konfiguriert
-- ✅ **Strukturierte Datenfelder**: MAC Address, RAM (GB), CPU, UUID, IP Address
-- ✅ **Erweiterte Felder**: Last User, OS Version, Windows Product Key, System Age
-- ✅ **Spezielle Felder**: Storage Summary, Hardware Hash, Inventory Version
-- ✅ **Eindeutige Datenbankfeld-Namen** (_snipeit_mac_address_1, etc.)
-- ✅ **Format-Validierung** für verschiedene Datentypen (MAC, IP, ANY)
-
-### 💻 Screenshot 6: Asset-Detail-Ansicht
-![Asset Detail View](screenshots/Screenshot%202025-08-19%20102551.png)
-**Was zeigt das Bild:**
-- ✅ **Vollständiger Asset-Datensatz** für Dell Precision 3560 Laptop
-- ✅ **Asset-Tag**: PC282 mit Seriennummer 00001
-- ✅ **Status-Management**: "In Verwendung" mit Checkout-Funktionalität
-- ✅ **Zeitstempel**: Erstellung 2025-08-18 12:28 PM, Aktualisierung 04:29 PM
-- ✅ **Hersteller-Integration**: Dell als Hersteller korrekt zugeordnet
-- ✅ **Kategorisierung**: Als "Laptop" klassifiziert
+- ✅ **Dell P3424WE Monitor** automatisch in SnipeIT inventarisiert
+- ✅ **Vollständige technische Spezifikationen** erfasst: 34" Display, digitale Verbindung, LCD-Typ
+- ✅ **PnP Device ID** für eindeutige Hardware-Identifikation
+- ✅ **Automatische Kategorisierung** als "Monitore" mit korrektem Hersteller
+- ✅ **Zeitstempel-Tracking** für Erstellung und letzte Aktualisierung
+- ✅ **Detaillierte Notizen** mit Device Name, Manufacturer, Model, Size, Resolution
 
 ---
 
