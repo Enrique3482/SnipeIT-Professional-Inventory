@@ -5,15 +5,14 @@
 
 ## 📸 Screenshot-Galerie mit Feature-Demonstration
 
-### ⚙️ Screenshot 1: Custom Fields Management
-![Custom Fields Configuration](screenshots/Screenshot%202025-08-19%20085503.png)
+### 🖥️ Screenshot 1: Asset-Übersicht Dashboard
+![Asset Overview Dashboard](screenshots/Screenshot%202025-08-19%20085252.png)
 **Was zeigt das Bild:**
-- ✅ **13 professionelle Custom Fields** automatisch konfiguriert
-- ✅ **Strukturierte Datenfelder**: MAC Address, RAM (GB), CPU, UUID, IP Address
-- ✅ **Erweiterte Felder**: Last User, OS Version, Windows Product Key, System Age
-- ✅ **Spezielle Felder**: Storage Summary, Hardware Hash, Inventory Version
-- ✅ **Eindeutige Datenbankfeld-Namen** (_snipeit_mac_address_1, etc.)
-- ✅ **Format-Validierung** für verschiedene Datentypen (MAC, IP, ANY)
+- ✅ **Zubehör-Übersicht** mit automatisch erkannten Assets
+- ✅ **Dell P3424WE Monitor** korrekt als "Monitore" kategorisiert
+- ✅ **Asset-Details**: Name, Kategorie, Modellnummer, Standort
+- ✅ **Warnung-Symbol** für Wartung oder Status-Updates
+- ✅ **Professionelle Darstellung** in SnipeIT Interface
 
 ### 💻 Screenshot 2: Asset-Detail-Ansicht
 ![Asset Detail View](screenshots/Screenshot%202025-08-19%20102551.png)
@@ -36,14 +35,15 @@
 - ✅ **Wartungsstatus**: System Age 36 Tage, Next Maintenance geplant
 - ✅ **Peripherie-Erkennung**: Docking Stations: 0, External Monitors: 1
 
-### 🎯 Screenshot 4: Asset-Übersicht Dashboard
-![Asset Overview Dashboard](screenshots/Screenshot%202025-08-19%20085252.png)
+### ⚙️ Screenshot 4: Custom Fields Management
+![Custom Fields Configuration](screenshots/Screenshot%202025-08-19%20085503.png)
 **Was zeigt das Bild:**
-- ✅ **Zubehör-Übersicht** mit automatisch erkannten Assets
-- ✅ **Dell P3424WE Monitor** korrekt als "Monitore" kategorisiert
-- ✅ **Asset-Details**: Name, Kategorie, Modellnummer, Standort
-- ✅ **Warnung-Symbol** für Wartung oder Status-Updates
-- ✅ **Professionelle Darstellung** in SnipeIT Interface
+- ✅ **13 professionelle Custom Fields** automatisch konfiguriert
+- ✅ **Strukturierte Datenfelder**: MAC Address, RAM (GB), CPU, UUID, IP Address
+- ✅ **Erweiterte Felder**: Last User, OS Version, Windows Product Key, System Age
+- ✅ **Spezielle Felder**: Storage Summary, Hardware Hash, Inventory Version
+- ✅ **Eindeutige Datenbankfeld-Namen** (_snipeit_mac_address_1, etc.)
+- ✅ **Format-Validierung** für verschiedene Datentypen (MAC, IP, ANY)
 
 ### 📊 Screenshot 5: Kategorie-Management
 ![Category Management](screenshots/Screenshot%202025-08-19%20085420.png)
@@ -53,7 +53,7 @@
 - ✅ **Mengen-Tracking**: Jeweils 1 Asset pro Kategorie erfasst
 - ✅ **Intelligente Klassifizierung** durch das Inventory-System
 
-### 🖥️ Screenshot 6: Intelligente Monitor-Erkennung
+### 🎯 Screenshot 6: Intelligente Monitor-Erkennung
 ![Monitor Detection Detail](screenshots/Screenshot%202025-08-19%20102718.png)
 **Was zeigt das Bild:**
 - ✅ **Dell P3424WE Monitor** automatisch in SnipeIT inventarisiert
