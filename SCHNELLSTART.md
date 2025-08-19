@@ -100,7 +100,7 @@ Register-ScheduledTask -TaskName "SnipeIT Inventur" -Action $action -Trigger $tr
 - 📖 **Vollständige Dokumentation**: [README.md](README.md)
 - 🐛 **Bug melden**: [GitHub Issues](../../issues)
 - 💬 **Fragen stellen**: [GitHub Discussions](../../discussions)
-- 📧 **E-Mail Support**: henrique.sebastiao@example.com
+- 📧 **E-Mail Support**: henrique.sebastiao@me.com
 
 ---
 
