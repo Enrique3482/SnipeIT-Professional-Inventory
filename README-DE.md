@@ -27,9 +27,9 @@
 
 | Feature | Screenshot | Beschreibung |
 |---------|------------|--------------|
-| **Asset-Dashboard** | ![Dashboard](screenshots/Screenshot%202025-08-19%20085252.png) | Vollständige Asset-Übersicht mit Monitor-Erkennung |
-| **Custom Fields** | ![Fields](screenshots/Screenshot%202025-08-19%20085503.png) | 13 professionelle Felder automatisch konfiguriert |
-| **Hardware-Report** | ![Report](screenshots/Screenshot%202025-08-19%20085148.png) | Detaillierte Dell Precision 3560 Spezifikationen |
+| **Custom Fields Management** | ![Custom Fields](screenshots/Screenshot%202025-08-19%20085503.png) | Vollständige Asset-Übersicht mit automatisch konfigurierten 13 professionellen Custom Fields |
+| **Zubehör-Übersicht** | ![Accessories](screenshots/Screenshot%202025-08-19%20085252.png) | 13 professionelle Felder automatisch konfiguriert mit Dell P3424WE Monitor-Erkennung |
+| **Asset-Liste** | ![Asset List](screenshots/Screenshot%202025-08-19%20085148.png) | Detaillierte Dell Precision 3560 Spezifikationen in tabellarischer Übersicht |
 | **Monitor-Erkennung** | ![Monitor](screenshots/Screenshot%202025-08-19%20102718.png) | Dell P3424WE automatisch inventarisiert |
 
 > **📸 Alle Screenshots aus echter Produktionsumgebung** - Siehe [RELEASE-NOTES-v2.0.0.md](RELEASE-NOTES-v2.0.0.md) für vollständige Demonstration
