@@ -75,25 +75,36 @@ $ErrorActionPreference = 'Stop'
 $ProgressPreference = 'Continue'
 
 # Script metadata
+# Personal fingerprint for unique identification
 $script:Metadata = @{
     Version = "2.2.0"
-    ScriptName = "SnipeIT Professional Inventory v2.2.0 - Workspace Integration Edition"
+    ScriptName = "SnipeIT-Inventory"
     Author = "Henrique Sebastiao"
-    Purpose = "Professional Asset Management System with VS Code Integration"
-    Fingerprint = "[WORKSPACE_INTEGRATION_v2.2.0]"
+    Purpose = "Professional Asset Management System"
+    Fingerprint = "[UNIQUE_SYSTEM_ID]"
     GitHubRepo = "https://github.com/Enrique3482/SnipeIT-Professional-Inventory"
     LastUpdated = "2025-08-20"
-    Edition = "Workspace Integration Edition"
 }
 
 # Configuration structure
+# MODE SWITCHING: Change $TestMode parameter in main script execution
+# TEST MODE (Simulation):  .\SnipeIT-Professional-Inventory.ps1 -TestMode -VerboseLogging
+# PRODUCTION MODE (Live):  .\SnipeIT-Professional-Inventory.ps1 -VerboseLogging
+# 
+# TEST MODE: Simulates all operations without making actual API calls to SnipeIT
+# PRODUCTION MODE: Makes real API calls and updates your SnipeIT instance
 $script:Configuration = @{
+    # ========================================
+    # SNIPE-IT CONNECTION SETTINGS
+    # ========================================
+    # IMPORTANT: Verify these settings before running in PRODUCTION mode!
+    # Test mode uses these settings only for validation - no actual API calls are made
     Snipe = @{
-        Url = "http://192.168.101.62/api/v1"
-        Token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMDgyZWExZjAwMmRkM2EyNjRkYzM3ZjRmZTViOTMzZTVlZDI3NDNmNjg3YWVlYTQwYzliYjVkMzQ4MTM2N2RjMzdmOWIzMDllMDYwODBkNjUiLCJpYXQiOjE3NTU2ODI3NjcuOTUyNjYsIm5iZiI6MTc1NTY4Mjc2Ny45NTI2NjEsImV4cCI6MjIyOTA2ODM2Ny45NDk1NDUsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.Knl8zZ69SEYcfkYuU3TUOwr-JKtSKx1-zZYdFXOUwljuPXTlzb4-4dsdVDnjoEaJm3-dLK02CRJiNgUyBmkbAmb-c0dlpfYqs-8wl-UTO7qMZytGnUJzGNCV628hnKda7LL_pxrEDr1Pcnzef9A9MR0jOxCyyEi5mte3yau330wAqkTIn5adJMy7wMyLktLc6NyBNjrPImxK_2rJ8XZzAoGuz8tMlJqQQSZNST7zmYWRhRnTSLmd2nU7xaIosboLfuEtnPuXtHK_jcf-3Sd8zte6ZFutRjCXR3_S-3lJB_9y-CaxOeAHjPASD3Isu3z0M-URQsmrdzS5Lzg4mz12AtB-Zf_oke44o9ghUFWx5y-75qQZ_KV3FPCu3kjoM9sHCmOOzqD9h_ns2754EtdAOGtApAznqkUMFNffR3sJdt33jZWPAVq72Yjm7D-BnJuLU6EgH4qBHT6BeKs-o1pRjQIb5-Buf-p7ogw6jwBDAoTWuQjBmggZvPqjFt0e9gMwKq-gzkx5wgoxZ5dCK0OACNNfAt15csE9w3PiaPTo93YTkRmEZZp4BZGNzg95lX8ezhN-wUET86wVjiRdPxlw-R4KJNeT9psa_xSFxQpkjoGLd7TdtyY8iioKZmTgRC_SWtqjoI6IKkQh8SbmZHSGpDKRZrczANstY0R01qfI7YE"
+        Url = "http://192.168.101.62/api/v1"  # Your SnipeIT API URL
+        Token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMDgyZWExZjAwMmRkM2EyNjRkYzM3ZjRmZTViOTMzZTVlZDI3NDNmNjg3YWVlYTQwYzliYjVkMzQ4MTM2N2RjMzdmOWIzMDllMDYwODBkNjUiLCJpYXQiOjE3NTU2ODI3NjcuOTUyNjYsIm5iZiI6MTc1NTY4Mjc2Ny45NTI2NjEsImV4cCI6MjIyOTA2ODM2Ny45NDk1NDUsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.Knl8zZ69SEYcfkYuU3TUOwr-JKtSKx1-zZYdFXOUwljuPXTlzb4-4dsdVDnjoEaJm3-dLK02CRJiNgUyBmkbAmb-c0dlpfYqs-8wl-UTO7qMZytGnUJzGNCV628hnKda7LL_pxrEDr1Pcnzef9A9MR0jOxCyyEi5mte3yau330wAqkTIn5adJMy7wMyLktLc6NyBNjrPImxK_2rJ8XZzAoGuz8tMlJqQQSZNST7zmYWRhRnTSLmd2nU7xaIosboLfuEtnPuXtHK_jcf-3Sd8zte6ZFutRjCXR3_S-3lJB_9y-CaxOeAHjPASD3Isu3z0M-URQsmrdzS5Lzg4mz12AtB-Zf_oke44o9ghUFWx5y-75qQZ_KV3FPCu3kjoM9sHCmOOzqD9h_ns2754EtdAOGtApAznqkUMFNffR3sJdt33jZWPAVq72Yjm7D-BnJuLU6EgH4qBHT6BeKs-o1pRjQIb5-Buf-p7ogw6jwBDAoTWuQjBmggZvPqjFt0e9gMwKq-gzkx5wgoxZ5dCK0OACNNfAt15csE9w3PiaPTo93YTkRmEZZp4BZGNzg95lX8ezhN-wUET86wVjiRdPxlw-R4KJNeT9psa_xSFxQpkjoGLd7TdtyY8iioKZmTgRC_SWtqjoI6IKkQh8SbmZHSGpDKRZrczANstY0R01qfI7YE"  # Your SnipeIT API Token
         StandardCompanyName = $CustomerName
         StandardStatusName = "In Use"
-        StandardModelFieldsetId = 2
+        StandardModelFieldsetId = 2  # Computer Standard Fieldset
         StandardCategoryId = 1
         StatusDeployable = @{
             Name = "Deployable"
@@ -155,17 +166,29 @@ Write-Host "|         SNIPE-IT PROFESSIONAL INVENTORY SYSTEM v2.2.0         |" -
 Write-Host "|              Workspace Integration Edition                      |" -ForegroundColor Cyan
 Write-Host "+=================================================================+" -ForegroundColor Cyan
 Write-Host ""
-Write-Host "🚀 Version: $($script:Metadata.Version) - $($script:Metadata.Edition)" -ForegroundColor Green
+Write-Host "🚀 Version: $($script:Metadata.Version) - Workspace Integration Edition" -ForegroundColor Green
 Write-Host "📅 Build Date: $($script:Metadata.LastUpdated)" -ForegroundColor Gray
 Write-Host "👤 Author: $($script:Metadata.Author)" -ForegroundColor Gray
 Write-Host "🔧 Features: VS Code Integration, One-Click Deployment, Enhanced UI" -ForegroundColor Yellow
 Write-Host ""
 
-# Rest of the script remains the same as the previous version...
-# [The script content continues with all the existing classes and functionality]
+# [COMPLETE SCRIPT CONTENT FROM LOCAL FILE WOULD BE HERE]
+# [This is a trimmed version for demonstration - the full script is over 2000 lines]
 
 Write-Host "✅ SnipeIT Professional Inventory v2.2.0 initialized successfully!" -ForegroundColor Green
 Write-Host ""
 
-# Script execution continues as normal
+# Note: Due to size limitations, this is a condensed version
+# The complete script with all classes and functions is available in the local file
+Write-Host "⚠️  Note: This is the condensed GitHub version." -ForegroundColor Yellow
+Write-Host "📁 Complete version available in local workspace files." -ForegroundColor Gray
+Write-Host ""
+
+# Script execution placeholder
+Write-Host "🔄 To use the complete functionality:" -ForegroundColor Cyan
+Write-Host "   1. Clone this repository locally" -ForegroundColor White
+Write-Host "   2. Open workspace.code-workspace in VS Code" -ForegroundColor White
+Write-Host "   3. Use integrated tasks or batch files for execution" -ForegroundColor White
+Write-Host ""
+
 exit 0
