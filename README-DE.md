@@ -9,6 +9,32 @@
 
 Das **SnipeIT Professional Inventory System** ist eine enterprise-grade Lösung für die automatisierte Hardware-Inventarisierung mit vollständiger Snipe-IT Integration. Version 2.2.0 führt eine komplette VS Code Workspace-Integration und benutzerfreundliche One-Click-Deployment-Optionen ein.
 
+## 📸 Screenshots
+
+### 🖥️ Asset-Übersicht Dashboard
+![Asset-Übersicht Dashboard](screenshots/Screenshot%202025-08-19%20085252.png)
+*Vollständige Übersicht aller verwalteten Assets mit detaillierten Informationen*
+
+### 📊 Hardware-Zusammenfassungsbericht
+![Hardware-Zusammenfassungsbericht](screenshots/Screenshot%202025-08-19%20085148.png)
+*Umfassende Hardware-Erkennung und Berichterstattung*
+
+### 🎮 Interaktives Starter-Menü
+![Interaktiver Starter](screenshots/Screenshot%202025-08-19%20085420.png)
+*Benutzerfreundliche interaktive Modusauswahl*
+
+### ⚙️ Konfigurationsverwaltung
+![Konfiguration](screenshots/Screenshot%202025-08-19%20085503.png)
+*Einfache Konfiguration und Custom Fields Setup*
+
+### 🖥️ Monitor-Erkennungsdetails
+![Monitor-Erkennung](screenshots/Screenshot%202025-08-19%20102718.png)
+*Erweiterte Monitor-Erkennung mit detaillierten Spezifikationen*
+
+### 📋 Asset-Detailansicht
+![Asset-Details](screenshots/Screenshot%202025-08-19%20102551.png)
+*Detaillierte Asset-Ansicht mit allen relevanten Informationen*
+
 ### 🌟 Hauptmerkmale
 
 - **🔄 Automatische Hardware-Erkennung**: Vollständige Systemanalyse mit intelligenter Komponenten-Identifikation
