@@ -40,6 +40,20 @@ Test-Modus.bat
 
 **🎉 Done! That's it!**
 
+## 📸 See It In Action:
+
+### 🎮 Interactive Starter
+![Interactive Starter](screenshots/Screenshot%202025-08-19%20085420.png)
+*User-friendly menu for mode selection*
+
+### 📊 Hardware Detection In Action
+![Hardware Detection](screenshots/Screenshot%202025-08-19%20085148.png)
+*Live detection of system hardware*
+
+### 🖥️ Asset Dashboard
+![Asset Dashboard](screenshots/Screenshot%202025-08-19%20085252.png)
+*Complete overview of all detected assets*
+
 ---
 
 ## 🎯 The 3 Start Methods Overview
