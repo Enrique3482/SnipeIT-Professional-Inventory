@@ -63,6 +63,10 @@
         "IntervalDays": 365,
         "WarningDays": 30
     },
+
+    ###### Individuell anpassbar und frei editierbar./ Fully customizable and editable.
+
+
     "ManufacturerSupport": {
         "Google": {
             "Name": "Google Deutschland GmbH",
