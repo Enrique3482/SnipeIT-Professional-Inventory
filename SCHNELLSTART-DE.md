@@ -40,6 +40,20 @@ Test-Modus.bat
 
 **🎉 Fertig! Das war's schon!**
 
+## 📸 So sieht es aus:
+
+### 🎮 Interaktiver Starter
+![Interaktiver Starter](screenshots/Screenshot%202025-08-19%20085420.png)
+*Benutzerfreundliches Menü für die Modusauswahl*
+
+### 📊 Hardware-Erkennung im Einsatz
+![Hardware-Erkennung](screenshots/Screenshot%202025-08-19%20085148.png)
+*Live-Erkennung der System-Hardware*
+
+### 🖥️ Asset-Dashboard
+![Asset-Dashboard](screenshots/Screenshot%202025-08-19%20085252.png)
+*Vollständige Übersicht aller erkannten Assets*
+
 ---
 
 ## 🎯 Die 3 Startmethoden im Überblick
