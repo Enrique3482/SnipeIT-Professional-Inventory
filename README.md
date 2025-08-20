@@ -23,6 +23,32 @@ Choose your preferred language / Wählen Sie Ihre bevorzugte Sprache:
 
 A comprehensive PowerShell-based asset management solution with VS Code workspace integration, automated hardware detection, and seamless SnipeIT API integration.
 
+## 📸 Screenshots
+
+### 🖥️ Asset Overview Dashboard
+![Asset Overview Dashboard](screenshots/Screenshot%202025-08-19%20085252.png)
+*Complete overview of all managed assets with detailed information*
+
+### 📊 Hardware Summary Report
+![Hardware Summary Report](screenshots/Screenshot%202025-08-19%20085148.png)
+*Comprehensive hardware detection and reporting*
+
+### 🎮 Interactive Starter Menu
+![Interactive Starter](screenshots/Screenshot%202025-08-19%20085420.png)
+*User-friendly interactive mode selection*
+
+### ⚙️ Configuration Management
+![Configuration](screenshots/Screenshot%202025-08-19%20085503.png)
+*Easy configuration and custom fields setup*
+
+### 🖥️ Monitor Detection Detail
+![Monitor Detection](screenshots/Screenshot%202025-08-19%20102718.png)
+*Advanced monitor detection with detailed specifications*
+
+### 📋 Asset Detail View
+![Asset Details](screenshots/Screenshot%202025-08-19%20102551.png)
+*Detailed asset view with all relevant information*
+
 ### 🚀 One-Click Start Options
 
 - `Interaktiv-Starten.bat` - Interactive mode with guided setup
