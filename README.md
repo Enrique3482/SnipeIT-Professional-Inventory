@@ -14,6 +14,7 @@ Choose your preferred language / Wählen Sie Ihre bevorzugte Sprache:
 - [📖 README](README-EN.md)
 - [🚀 Quickstart](QUICKSTART-EN.md)
 - [📋 Changelog v2.2.0](CHANGELOG-v2.2.0-EN.md)
+- [📄 Release Notes v2.2.0](RELEASE-NOTES-v2.2.0-EN.md)
 
 ---
 
